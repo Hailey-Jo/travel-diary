@@ -11,11 +11,10 @@
 		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">		 
 		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="maincss/assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<noscript><link rel="stylesheet" href="maincss/assets/css/noscript.css" /></noscript>
+		<!--=====================================cookie 사용하기 위한 코드=======================================-->
+		<script src="http://lab.alexcican.com/set_cookies/cookie.js" type="text/javascript" ></script>
 </head>
 <body class="is-loading-0 is-loading-1 is-loading-2">
 	<!-- Main -->
@@ -261,8 +260,42 @@
 	    </div>
 	  </div>
 	  <!--다해테스트  -->
+	  <!-- 쿠키입력 -->
 <script type="text/javascript">
 
+var user_id = $.cookie("user_id"); 
+
+if(user_id != null){
+
+	$("#Login_Id").val(user_id);
+
+	$("#_chk_save_id").attr("checked", "checked");
+	
+}
+
+$("#_chk_save_id").click(function() {
+
+	if($('input:checkbox[id="_chk_save_id"]').is(":checked")){ 
+		alert("checked");
+		
+
+		if($("#Login_Id").val()==""){
+
+			alert("아이디를 입력해주십시오");
+
+			$(this).attr("checked", false);
+ 
+		}else{
+
+			$.cookie("user_id", $("#Login_Id").val(), {expires:7, path:'/'}); //path:"/" < 모든 경로
+
+		}
+
+	}else{
+		alert("unchecked");
+		$.removeCookie("user_id", { path: '/'});
+	}
+});
 </script>
 </body>
 </html>

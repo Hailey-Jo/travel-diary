@@ -1,7 +1,6 @@
 package ta.com.a.model;
 
 public class MembersDto {
-	private int seg;//시퀀스넘버
 	private String id;//아이디
 	private String email;//이메일
 	private String pwd; //패스워드
@@ -12,10 +11,8 @@ public class MembersDto {
 	
 	public MembersDto() {}
 
-	public MembersDto(int seg, String id, String email, String pwd, String sex, String age, int auth,
-			String profile_Img) {
+	public MembersDto(String id, String email, String pwd, String sex, String age, int auth, String profile_Img) {
 		super();
-		this.seg = seg;
 		this.id = id;
 		this.email = email;
 		this.pwd = pwd;
@@ -23,14 +20,6 @@ public class MembersDto {
 		this.age = age;
 		this.auth = auth;
 		this.profile_Img = profile_Img;
-	}
-
-	public int getSeg() {
-		return seg;
-	}
-
-	public void setSeg(int seg) {
-		this.seg = seg;
 	}
 
 	public String getId() {
@@ -91,9 +80,9 @@ public class MembersDto {
 
 	@Override
 	public String toString() {
-		return "MembersDto [seg=" + seg + ", id=" + id + ", email=" + email + ", pwd=" + pwd + ", sex=" + sex + ", age="
-				+ age + ", auth=" + auth + ", profile_Img=" + profile_Img + "]";
+		return "MembersDto [id=" + id + ", email=" + email + ", pwd=" + pwd + ", sex=" + sex + ", age=" + age
+				+ ", auth=" + auth + ", profile_Img=" + profile_Img + "]";
 	}
-	
+
 	
 }

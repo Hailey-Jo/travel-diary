@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,11 +14,11 @@
                 <div class="row">
                     <div class="col-lg-6 flex align-items-center">
                         <div class="header-bar-text d-none d-lg-block">
-                            <p>Hello, "Traveler ID"</p>
+                            <p>Hello, ${login.id}</p>
                         </div><!-- .header-bar-text -->
 
                         <div class="header-bar-email d-none d-lg-block">
-                            <a href="#"><i class="fa fa-plane"></i>D-day-130days to Hongkong</a>
+                            <a href="dday.do"><i class="fa fa-plane"></i>D-day-130days to Hongkong</a>
                         </div><!-- .header-bar-email -->
                     </div><!-- .col -->
 
@@ -77,3 +78,6 @@
             </div><!-- .row -->
         </div><!-- .container -->
     </header><!-- .site-header -->
+    
+    
+    

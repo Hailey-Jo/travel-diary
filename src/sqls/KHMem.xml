@@ -6,5 +6,12 @@
 <mapper namespace="TAMem">
 
 
+<!--로그인-->
+<select id="TaLogin" resultType="ta.com.a.model.MembersDto" parameterType="ta.com.a.model.MembersDto">
+SELECT ID, EMAIL, PWD, SEX, AGE, AUTH, PROFILE_IMG
+FROM MEMBERS 
+WHERE ID=#{id} AND PWD=#{pwd}
+</select>
+
 
 </mapper>

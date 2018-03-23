@@ -17,6 +17,11 @@
 	<put-attribute name="bottom_inc" value="/WEB-INF/views/common/bottom.jsp"/>
 </definition>
 
+<definition name="dday.tiles" extends="home.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/home/ddayview.jsp"/>
+</definition>
+
+
 
 
 </tiles-definitions>
