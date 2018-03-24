@@ -16,14 +16,10 @@ public class TaProjectController {
 
 	private static final Logger logger = LoggerFactory.getLogger(TaMemberController.class);
 	
+
 	@Autowired
 	TaProjectService taProjectService;
-	/*	
-	@RequestMapping(value="popular.do", method=RequestMethod.GET)
-	public String login(Model model) {
-		logger.info("TaProjectController popular");
-		return "popular.tiles";
-	}*/
+
 	/*-------------------------------------------------------------------------------------
 	 * 	프로젝트 작성 폼으로 이동
 	 *-------------------------------------------------------------------------------------*/
@@ -31,6 +27,7 @@ public class TaProjectController {
 	public String projectwrite(Model model) {
 		logger.info("TaProjectController projectwrite");
 		return "projectwrite.tiles";
+
 	}
 	/*-------------------------------------------------------------------------------------
 	 * 	프로젝트 작성후 포스트 라이트 뷰로 이동
@@ -43,6 +40,7 @@ public class TaProjectController {
 		logger.info("TaProjectController seq:  "+seq);
 		model.addAttribute("seq", seq);
 		return "postwrite.tiles";
+
 	}
 	
 	

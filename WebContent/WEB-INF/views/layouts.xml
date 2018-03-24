@@ -36,7 +36,6 @@
 	<put-attribute name="main" value="/WEB-INF/views/write/postwriteview.jsp"/>
 </definition>
 
-
 </tiles-definitions>
 
 

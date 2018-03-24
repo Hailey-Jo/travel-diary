@@ -19,6 +19,5 @@ public class TaMemServiceImpl implements TaMemSerivce {
 		// TODO Auto-generated method stub
 		return taMemberDao.getLogin(mdto);
 	}
-	
-	
+
 }

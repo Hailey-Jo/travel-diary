@@ -11,6 +11,17 @@ public class MembersDto {
 	
 	public MembersDto() {}
 
+	public MembersDto(String id, String email, String pwd, String sex, String age, int auth, String profile_Img) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.pwd = pwd;
+		this.sex = sex;
+		this.age = age;
+		this.auth = auth;
+		this.profile_Img = profile_Img;
+	}
+
 	public String getId() {
 		return id;
 	}
@@ -67,16 +78,6 @@ public class MembersDto {
 		this.profile_Img = profile_Img;
 	}
 
-	public MembersDto(String id, String email, String pwd, String sex, String age, int auth, String profile_Img) {
-		super();
-		this.id = id;
-		this.email = email;
-		this.pwd = pwd;
-		this.sex = sex;
-		this.age = age;
-		this.auth = auth;
-		this.profile_Img = profile_Img;
-	}
 
 	@Override
 	public String toString() {
@@ -84,6 +85,4 @@ public class MembersDto {
 				+ ", auth=" + auth + ", profile_Img=" + profile_Img + "]";
 	}
 
-	
-	
 }

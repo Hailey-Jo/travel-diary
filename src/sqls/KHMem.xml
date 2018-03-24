@@ -4,6 +4,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="TAMem">
+
 <!--아이디로그인-->
 <select id="TaLogin" resultType="ta.com.a.model.MembersDto" parameterType="ta.com.a.model.MembersDto">
 SELECT ID, EMAIL, PWD, SEX, AGE, AUTH, PROFILE_IMG
@@ -11,5 +12,6 @@ SELECT ID, EMAIL, PWD, SEX, AGE, AUTH, PROFILE_IMG
 WHERE ID=#{id}
 AND PWD=#{pwd}
 </select>
+
 
 </mapper>
