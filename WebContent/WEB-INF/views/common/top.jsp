@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,11 +14,16 @@
                 <div class="row">
                     <div class="col-lg-6 flex align-items-center">
                         <div class="header-bar-text d-none d-lg-block">
-                            <p>Hello, "Traveler ID"</p>
+                            <p>Hello, ${login.id}</p>
                         </div><!-- .header-bar-text -->
 
                         <div class="header-bar-email d-none d-lg-block">
-                            <a href="#"><i class="fa fa-plane"></i>D-day-130days to Hongkong</a>
+                        	<c:if test="${sddto.contents != null}">
+                            <a href="dday.do?id=${login.id}"><i class="fa fa-plane"></i>D-day-${sddto.d_day}days,  ${sddto.contents}</a>
+                            </c:if>
+                            <c:if test="${sddto.contents == null}">
+                            <a href="dday.do?id=${login.id}"><i class="fa fa-plane"></i>등록된 dday가 없습니다. dday를 설정해주세요:)</a>
+                            </c:if>
                         </div><!-- .header-bar-email -->
                     </div><!-- .col -->
 
@@ -28,7 +34,7 @@
                                 <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                                 <li><a href="#"><i class="fa fa-bell-o"></i></a></li>
                                 <li><a href="#"><i class="fa fa-envelope-o"></i></a></li>
-                                <li><a href="#"><i class="fa fa-power-off"></i></a></li>
+                                <li><a href="logout.do"><i class="fa fa-power-off"></i></a></li>
                             </ul>
                         </div><!-- .header-bar-social -->
 
@@ -59,9 +65,9 @@
                         </div><!-- .hamburger-menu -->
 
                         <ul class="flex-lg flex-lg-row justify-content-lg-center align-content-lg-center">
-                            <li><a href="#"><i class="fa fa-home"></i></a></li>
+                            <li><a href="login.do"><i class="fa fa-home"></i></a></li>
                             <li><a href="#"><i class="fa fa-thumbs-o-up"></i></a></li>
-                            <li><a href="#"><i class="fa fa-plane"></i></a></li>
+                            <li><a href="projectwrite.do"><i class="fa fa-plane"></i></a></li>
                             <li><a href="#"><i class="fa fa-align-justify"></i></a></li>
                             <li><a href="#"><i class="fa fa-calendar"></i></a></li>
                         </ul>
@@ -77,3 +83,6 @@
             </div><!-- .row -->
         </div><!-- .container -->
     </header><!-- .site-header -->
+    
+    
+    

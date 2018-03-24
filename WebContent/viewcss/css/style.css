@@ -867,6 +867,30 @@ a:hover, a:active {
     background: #2f2f2f;
 }
 
+.contact-form input[type="button"] {
+    display: block;
+    width: 200px;
+    padding: 20px 0;
+    margin-top: 60px;
+    border: 0;
+    font-size: 14px;
+    color: #fff;
+    line-height: 1;
+    background: #2f2f2f;
+}
+
+button{
+	display: block;
+    width: 200px;
+    padding: 20px 0;
+    margin-top: 10px;
+    border: 0;
+    font-size: 14px;
+    color: #fff;
+    line-height: 1;
+    background: #2f2f2f;
+}
+
 @media screen and (min-width: 768px){
     .contact-page-social li {
         margin-right: 65px;
