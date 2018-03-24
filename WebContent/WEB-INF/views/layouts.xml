@@ -22,6 +22,8 @@
 </definition>
 
 
+<!--로그아웃 후 첫화면으로 돌아가기-->
+<definition template="./index.jsp" name="logout.tiles"> </definition>
 
 
 </tiles-definitions>

@@ -18,7 +18,12 @@
                         </div><!-- .header-bar-text -->
 
                         <div class="header-bar-email d-none d-lg-block">
-                            <a href="dday.do"><i class="fa fa-plane"></i>D-day-130days to Hongkong</a>
+                        	<c:if test="${sddto.contents != null}">
+                            <a href="dday.do?id=${login.id}"><i class="fa fa-plane"></i>D-day-${sddto.d_day}days,  ${sddto.contents}</a>
+                            </c:if>
+                            <c:if test="${sddto.contents == null}">
+                            <a href="dday.do?id=${login.id}"><i class="fa fa-plane"></i>등록된 dday가 없습니다. dday를 설정해주세요:)</a>
+                            </c:if>
                         </div><!-- .header-bar-email -->
                     </div><!-- .col -->
 
@@ -29,7 +34,7 @@
                                 <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                                 <li><a href="#"><i class="fa fa-bell-o"></i></a></li>
                                 <li><a href="#"><i class="fa fa-envelope-o"></i></a></li>
-                                <li><a href="#"><i class="fa fa-power-off"></i></a></li>
+                                <li><a href="logout.do"><i class="fa fa-power-off"></i></a></li>
                             </ul>
                         </div><!-- .header-bar-social -->
 
@@ -60,7 +65,7 @@
                         </div><!-- .hamburger-menu -->
 
                         <ul class="flex-lg flex-lg-row justify-content-lg-center align-content-lg-center">
-                            <li><a href="#"><i class="fa fa-home"></i></a></li>
+                            <li><a href="login.do"><i class="fa fa-home"></i></a></li>
                             <li><a href="#"><i class="fa fa-thumbs-o-up"></i></a></li>
                             <li><a href="#"><i class="fa fa-plane"></i></a></li>
                             <li><a href="#"><i class="fa fa-align-justify"></i></a></li>
