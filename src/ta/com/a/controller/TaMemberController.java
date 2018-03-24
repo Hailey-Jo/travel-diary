@@ -44,7 +44,7 @@ public class TaMemberController {
 		//dday용 이미 로그인한아이디가 있으면 dday만 가지고 감
 		if(Findlogin != null && !Findlogin.getId().equals("")) {
 			ShowDdayDto sddto = taDdayService.getDday(Findlogin.getId());
-			model.addAttribute("sddto", sddto);
+			session.setAttribute("sddto", sddto);
 			return "home.tiles";
 		//처음 로그인 했을경우
 		}else {
@@ -59,7 +59,7 @@ public class TaMemberController {
 			if(login != null && !login.getId().equals("")) {
 				session.setAttribute("login", login);
 				ShowDdayDto sddto = taDdayService.getDday(login.getId());
-				model.addAttribute("sddto", sddto);
+				session.setAttribute("sddto", sddto);
 				return "home.tiles";
 			//로그인 실패
 			}else {

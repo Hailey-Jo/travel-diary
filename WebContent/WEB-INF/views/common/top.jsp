@@ -67,7 +67,7 @@
                         <ul class="flex-lg flex-lg-row justify-content-lg-center align-content-lg-center">
                             <li><a href="login.do"><i class="fa fa-home"></i></a></li>
                             <li><a href="#"><i class="fa fa-thumbs-o-up"></i></a></li>
-                            <li><a href="#"><i class="fa fa-plane"></i></a></li>
+                            <li><a href="projectwrite.do"><i class="fa fa-plane"></i></a></li>
                             <li><a href="#"><i class="fa fa-align-justify"></i></a></li>
                             <li><a href="#"><i class="fa fa-calendar"></i></a></li>
                         </ul>

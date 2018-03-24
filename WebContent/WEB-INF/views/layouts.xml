@@ -6,7 +6,7 @@
 
 <tiles-definitions>
 
-
+<!--로그인 후 홈화면으로 이동-->
 <definition name="home.tiles" template="/WEB-INF/views/layouts-tiles.jsp">
 	<put-attribute name="common" value="/WEB-INF/views/common/common.jsp"/>
 	<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
@@ -17,6 +17,7 @@
 	<put-attribute name="bottom_inc" value="/WEB-INF/views/common/bottom.jsp"/>
 </definition>
 
+<!--dday화면으로 이동-->
 <definition name="dday.tiles" extends="home.tiles">
 	<put-attribute name="main" value="/WEB-INF/views/home/ddayview.jsp"/>
 </definition>
@@ -25,7 +26,16 @@
 <!--로그아웃 후 첫화면으로 돌아가기-->
 <definition template="./index.jsp" name="logout.tiles"> </definition>
 
-
+<!--프로젝트 글쓰기 폼으로 이동-->
+<!-- 
+<definition template="projectwrite.tiles" extends="home.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/write/projectwriteview.jsp"/>
+</definition>
+ -->
+ 
+ <definition name="projectwrite.tiles" extends="home.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/write/projectwriteview.jsp"/>
+</definition>
 </tiles-definitions>
 
 

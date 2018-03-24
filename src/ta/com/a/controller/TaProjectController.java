@@ -14,11 +14,17 @@ public class TaProjectController {
 	
 /*	@Autowired
 	KhMemberService khMemberService;*/
-	
+/*	
 	@RequestMapping(value="popular.do", method=RequestMethod.GET)
 	public String login(Model model) {
 		logger.info("TaProjectController popular");
 		return "popular.tiles";
+	}*/
+	
+	@RequestMapping(value="projectwrite.do", method=RequestMethod.GET)
+	public String projectwrite(Model model) {
+		logger.info("TaProjectController projectwrite");
+		return "projectwrite.tiles";
 	}
 	
 	
