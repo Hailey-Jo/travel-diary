@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="TADday">
+
+<!--Dday추가-->
+<insert id="addDday" parameterType="ta.com.a.model.DDayDto">
+INSERT INTO DDAY(SEQ, ID, STARTDAY, LASTDAY, CONTENTS) 
+VALUES(SEQ_DDAY.NEXTVAL,#{id},TO_DATE(#{startDay}, 'YYYY-MM-DD'),TO_DATE(#{lastDay}, 'YYYY-MM-DD'), #{contents})
+</insert>
+
+
+<select id="getDday" parameterType="java.lang.String" resultType="ta.com.a.model.ShowDdayDto">
+SELECT TRUNC((STARTDAY-SYSDATE)+1) AS D_DAY , CONTENTS 
+FROM (SELECT * FROM DDAY ORDER BY SEQ DESC) 
+WHERE ID=#{id} AND ROWNUM=1
+</select>
+</mapper>
