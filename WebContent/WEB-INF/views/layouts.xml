@@ -36,6 +36,11 @@
 	<put-attribute name="main" value="/WEB-INF/views/write/postwriteview.jsp"/>
 </definition>
 
+<!--가계부글쓰기 뷰로 이동-->
+<definition name="cashbook.tiles" extends="home.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/write/cashbookwriteview.jsp"/>
+</definition>
+
 </tiles-definitions>
 
 

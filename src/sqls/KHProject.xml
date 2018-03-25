@@ -2,16 +2,41 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="TAProject">
-<!--프로젝트 sql-->
-<!--seq번호가져오기  -->
+
+<!--=============================프로젝트 입력=============================================-->
+
+<!--seq번호가져오기 for addproject  -->
 <select id="getSequence" resultType="ta.com.a.model.ProjectsDto">
 SELECT SEQ_PJ.NEXTVAL AS SEQ FROM DUAL
 </select>
+
 <!--프로젝트 입력하기-->
 <insert id="addProject" parameterType="ta.com.a.model.ProjectsDto">
 INSERT INTO PROJECTS (SEQ, P_TITLE, LIKES, ID, COMMENTS, DEL, P_DATE, TAG)
  VALUES(#{seq}, #{p_Title}, 0, #{id}, 0, 0, SYSDATE, '')
-
 </insert>
+
+<!--============================================================================================-->
+
+
+
+<!--=============================D_PostWrite 입력=============================================-->
+
+<!--seq번호가져오기 for addPost  -->
+<select id="getSequence2" resultType="ta.com.a.model.D_PostsDto">
+SELECT SEQ_DP.NEXTVAL AS SEQ FROM DUAL
+</select>
+
+<!--포스트 입력하기-->
+<insert id="addPost" parameterType="ta.com.a.model.D_PostsDto">
+INSERT INTO D_POSTS (SEQ, P_NUM, CITY, CONTINENT, COUNTRY, CONTENTS, GRADES, CASHBOOK, 
+D_DATE, MAP, D_DELETE, IMG1, IMG2, IMG3, IMG4, ID)
+VALUES(#{seq}, #{p_Num}, #{city}, #{continent}, #{country}, #{contents}, #{grade}, 0, 
+TO_DATE(#{d_Date}, 'YYYY-MM-DD'), #{map}, 0, #{img1}, #{img2}, #{img3}, #{img4}, #{id})
+</insert>
+
+<!--=========================================================================================-->
+
+
 
 </mapper>

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ta.com.a.dao.TaProjectDao;
+import ta.com.a.model.D_PostsDto;
 import ta.com.a.model.ProjectsDto;
 import ta.com.a.service.TaProjectService;
 
@@ -22,6 +23,18 @@ public class TaProjectServiceImpl implements TaProjectService {
 		System.out.println("TaProjectServiceImpl-seq: "+seq);
 		pdto.setSeq(seq);
 		taProjectDao.addProject(pdto);
+		return seq;
+	}
+	
+	/*------------------------------------------------------------------------------
+	 * 시퀀스번호 받아서 포스트 입력후 다시 시퀀스번호 넘겨줌
+	 * -------------------------------------------------------------------------------*/
+	@Override
+	public int addPost(D_PostsDto dpdto) {
+		int seq = taProjectDao.getSequenceNum2();
+		System.out.println("TaProjectServiceImpl-seq: "+seq);
+		dpdto.setSeq(seq);
+		taProjectDao.addPost(dpdto);
 		return seq;
 	}
 

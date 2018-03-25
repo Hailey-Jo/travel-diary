@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import ta.com.a.model.D_PostsDto;
 import ta.com.a.model.ProjectsDto;
 import ta.com.a.service.TaProjectService;
 @Controller
@@ -42,7 +43,29 @@ public class TaProjectController {
 		return "postwrite.tiles";
 
 	}
-	
+	/*-------------------------------------------------------------------------------------
+	 * 	포스트 작성하기
+	 *-------------------------------------------------------------------------------------*/
+	@RequestMapping(value="postwriteAf.do", method=RequestMethod.POST)
+	public String postwriteAf(Model model, D_PostsDto dpdto) {
+		logger.info("TaProjectController postwriteAf");
+		logger.info("TaProjectController postwriteAf dpdto: "+dpdto.toString());
+		
+		////////////지도경로: 위도경도(123.123, 123.123) 이걸 {lat:123.123, lng:123,123} 으로 바꾸기//////////////////////////
+		String _map[] = dpdto.getMap().substring(1, dpdto.getMap().length()-1).split(", ");
+		for (int i = 0; i < _map.length; i++) {
+			logger.info("_map["+i+"]"+_map[i]);
+		}
+		String map="{lat:"+_map[0]+", lng:"+_map[1]+"}";
+		dpdto.setMap(map);
+		logger.info("map"+dpdto.getMap());
+		///////////////////////////////////////////////////////////////////////////////////////////////////
+		
+		taProjectService.addPost(dpdto);
+		model.addAttribute("d_Num", dpdto.getSeq());
+		return "cashbook.tiles";
+
+	}
 	
 	
 	
